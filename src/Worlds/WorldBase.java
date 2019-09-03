@@ -27,7 +27,8 @@ public abstract class WorldBase {
 
     protected Handler handler;
 
-
+    private int score;
+    
     public Boolean appleOnBoard;
     protected Apple apple;
     public Boolean[][] appleLocation;
@@ -47,21 +48,20 @@ public abstract class WorldBase {
     }
     public void tick(){
 
-
-
+    	
     }
 
     public void render(Graphics g){
 
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
 
-            g.setColor(Color.white);
+            g.setColor(Color.WHITE);
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
 
         }
 
-
+        
 
     }
 

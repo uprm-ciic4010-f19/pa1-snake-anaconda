@@ -1,6 +1,7 @@
 package Worlds;
 
 import Game.Entities.Static.Apple;
+
 import Main.Handler;
 
 import java.awt.*;
@@ -43,12 +44,19 @@ public class WorldOne extends WorldBase{
             appleLocation[appleX][appley]=true;
 
         }
+        
     }
 
     @Override
     public void render(Graphics g){
         super.render(g);
         player.render(g,playerLocation);
+        
+        Font font = new Font ("SansSerif", Font.PLAIN, 24);
+		g.setFont(font);
+		g.drawString("SCORE", 10, 20);
+		g.drawString(String.valueOf(player.scoreTracker), 20, 40);
     }
+    
 
 }
