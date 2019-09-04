@@ -52,10 +52,10 @@ public abstract class WorldBase {
     }
 
     public void render(Graphics g){
-
+    	Color purple1 = new Color(204,153,255);
         for (int i = 0; i <= 800; i = i + GridPixelsize) {
 
-            g.setColor(Color.WHITE);
+            g.setColor(purple1);
             g.drawLine(0, i, handler.getWidth() , i);
             g.drawLine(i,0,i,handler.getHeight());
 

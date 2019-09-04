@@ -41,13 +41,14 @@ public class DisplayScreen {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+ 
         canvas = new Canvas();
+        Color purple = new Color(204,153,255);
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);
-        canvas.setBackground(Color.black);
+        canvas.setBackground(purple);
 
         frame.add(canvas);
         frame.pack();
