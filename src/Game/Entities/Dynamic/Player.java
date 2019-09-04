@@ -3,6 +3,7 @@ package Game.Entities.Dynamic;
 import Main.Handler;
 
 
+import java.math.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
@@ -257,8 +258,7 @@ public class Player {
 		//Score of player
 
 		if(handler.getWorld().player.justAte == true) {
-			scoreTracker++;
-			//			scoreTracker = 2*scoreTracker+1;
+			scoreTracker = Math.sqrt(2*scoreTracker+1);
 		}
 	}
 
