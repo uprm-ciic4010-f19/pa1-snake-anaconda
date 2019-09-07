@@ -126,9 +126,9 @@ public class Player {
 		Color green = new Color(43,148,53);
 		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
 			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-				g.setColor(green);
 
-				if(playeLocation[i][j]||handler.getWorld().appleLocation[i][j]){
+				if(playeLocation[i][j]){
+					g.setColor(green);
 					g.fillRect((i*handler.getWorld().GridPixelsize),
 							(j*handler.getWorld().GridPixelsize),
 							handler.getWorld().GridPixelsize,
@@ -259,6 +259,14 @@ public class Player {
 
 		if(handler.getWorld().player.justAte == true) {
 			scoreTracker = Math.sqrt(2*scoreTracker+1);
+			moveCounter=moveCounter+4;
+			
+		}
+		if (handler.getWorld().apple.appleGood == false) {
+			scoreTracker = scoreTracker - Math.sqrt(2*scoreTracker+1);
+
+			handler.getWorld().body.removeLast();
+			handler.getWorld().playerLocation[tail.x][tail.y] = true;
 		}
 	}
 

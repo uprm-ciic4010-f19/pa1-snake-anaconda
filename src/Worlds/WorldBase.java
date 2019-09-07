@@ -30,7 +30,7 @@ public abstract class WorldBase {
     private int score;
     
     public Boolean appleOnBoard;
-    protected Apple apple;
+    public Apple apple;
     public Boolean[][] appleLocation;
 
 
