@@ -159,7 +159,6 @@ public class Player {
 		}
 		if(pSteps == 500) {
 			handler.getWorld().apple.appleGood = false;
-			pSteps = 0;
 		}
 		//Show score
 		Font font = new Font ("SansSerif", Font.BOLD, 22);
@@ -171,6 +170,7 @@ public class Player {
 
 	public void Eat(){
 		lenght++;
+		pSteps = 0;
 		Tail tail= null;
 		handler.getWorld().appleLocation[xCoord][yCoord]=false;
 		handler.getWorld().appleOnBoard=false;
@@ -280,8 +280,12 @@ public class Player {
 			}
 			break;
 		}
+		
 		//Score of player
-
+		if(handler.getWorld().apple.appleGood == false) {
+			scoreTracker = scoreTracker - Math.sqrt(2*scoreTracker+1);
+		}
+		
 		if(handler.getWorld().player.justAte == true && handler.getWorld().apple.appleGood == true) {
 			scoreTracker = Math.sqrt(2*scoreTracker+1);
 			handler.getWorld().body.addLast(tail);
@@ -290,10 +294,15 @@ public class Player {
 			
 		}
 		if (handler.getWorld().player.justAte == true && handler.getWorld().apple.appleGood == false) {
-			handler.getWorld().body.removeLast();
-			kill();
-			scoreTracker = scoreTracker - Math.sqrt(2*scoreTracker+1);
-			
+			if(!handler.getWorld().body.isEmpty()){
+				handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
+				handler.getWorld().body.removeLast();
+				kill();
+			}
+			else {
+				kill();
+			}
+				
 		}
 	}
 

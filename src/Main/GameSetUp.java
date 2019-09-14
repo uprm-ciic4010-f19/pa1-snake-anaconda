@@ -88,7 +88,7 @@ public class GameSetUp implements Runnable {
 
 		try {
 
-			audioFile = getClass().getResourceAsStream("/music/moon.wav");
+			audioFile = getClass().getResourceAsStream("/music/nature.wav");
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 			format = audioStream.getFormat();
 			info = new DataLine.Info(Clip.class, format);
