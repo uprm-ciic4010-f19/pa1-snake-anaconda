@@ -12,8 +12,6 @@ import java.util.Random;
  * Created by AlexVR on 7/2/2018.
  */
 public class WorldOne extends WorldBase{
-	
-	public int pSteps = 0;
 
     public WorldOne (Handler handler) {
         super(handler);
@@ -30,7 +28,6 @@ public class WorldOne extends WorldBase{
     public void tick() {
         super.tick();
         player.tick();
-        pSteps+=1;
         if(!appleOnBoard){
             appleOnBoard=true;
             int appleX = new Random().nextInt(handler.getWorld().GridWidthHeightPixelCount-1);
@@ -50,12 +47,6 @@ public class WorldOne extends WorldBase{
             if (goodCoordinates) {
 				
 			}
-            if (pSteps == 1) {
-				handler.getWorld().apple.appleGood=false;
-				pSteps=0;
-				//System.out.println(1);
-				//Color purple2 = new Color(204,153,255);
-			}
 
         }
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
@@ -69,11 +60,7 @@ public class WorldOne extends WorldBase{
         super.render(g);
         player.render(g,playerLocation);
         apple.render(g, appleLocation);
-        
-        Font font = new Font ("SansSerif", Font.PLAIN, 24);
-		g.setFont(font);
-		g.drawString("SCORE", 10, 20);
-		g.drawString(String.valueOf(player.scoreTracker), 20, 40);
+
     }
     
 

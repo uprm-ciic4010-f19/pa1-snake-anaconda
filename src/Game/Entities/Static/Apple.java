@@ -33,7 +33,7 @@ public class Apple {
 				if(handler.getWorld().appleLocation[i][j]){
 					if (appleGood == true) {
 						a.setColor(green);
-						System.out.println(1);
+						
 						a.fillRect((i*handler.getWorld().GridPixelsize),
 								(j*handler.getWorld().GridPixelsize),
 								handler.getWorld().GridPixelsize,
@@ -42,8 +42,6 @@ public class Apple {
 					}
 					if (appleGood == false) {
 						a.setColor(brown);
-						System.out.println(2);
-
 						a.fillRect((i*handler.getWorld().GridPixelsize),
 								(j*handler.getWorld().GridPixelsize),
 								handler.getWorld().GridPixelsize,
