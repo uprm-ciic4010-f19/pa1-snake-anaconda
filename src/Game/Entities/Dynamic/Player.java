@@ -77,8 +77,6 @@ public class Player {
 
 	}
 
-
-
 	public void checkCollisionAndMove(){
 		handler.getWorld().playerLocation[xCoord][yCoord]=false;
 		int x = xCoord;
@@ -293,8 +291,9 @@ public class Player {
 		}
 		if (handler.getWorld().player.justAte == true && handler.getWorld().apple.appleGood == false) {
 			handler.getWorld().body.removeLast();
-			scoreTracker = scoreTracker - Math.sqrt(2*scoreTracker+1);
 			kill();
+			scoreTracker = scoreTracker - Math.sqrt(2*scoreTracker+1);
+			
 		}
 	}
 

@@ -23,11 +23,12 @@ public class WorldOne extends WorldBase{
         appleLocation = new Boolean[GridWidthHeightPixelCount][GridWidthHeightPixelCount];
 
     }
-
+    
     @Override
     public void tick() {
         super.tick();
         player.tick();
+        
         if(!appleOnBoard){
             appleOnBoard=true;
             int appleX = new Random().nextInt(handler.getWorld().GridWidthHeightPixelCount-1);
@@ -60,7 +61,6 @@ public class WorldOne extends WorldBase{
         super.render(g);
         player.render(g,playerLocation);
         apple.render(g, appleLocation);
-
     }
     
 
